@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
+  <div class="container">
   <h1>Generador de Cuentos</h1>
   <form id="cuentoForm">
     <label for="nombresApellidos">Nombres y Apellidos:</label>
@@ -25,13 +26,13 @@
     <label for="hobby">Hobby (Solo uno):</label>
     <input type="text" id="hobby" required><br>
 
-    <input type="submit" value="Continuar">
+    <input type="submit" value="Generar Cuento">
   </form>
 
   <div id="cuentoResultado">
     <!-- Aquí se mostrará el cuento generado -->
   </div>
-
+</div>
   <script>
     const cuentoForm = document.getElementById('cuentoForm');
     const cuentoResultado = document.getElementById('cuentoResultado');
@@ -46,7 +47,17 @@
       const edad = document.getElementById('edad').value;
       const hobby = document.getElementById('hobby').value;
 
-      const cuento = `Había una vez una persona llamada ${nombresApellidos}, también conocida como "${apodo}". Tenía el cabello de color ${colorCabello} y unos hermosos ojos de color ${colorOjos}. A sus ${edad} años, su pasión más grande en la vida era su hobby: ${hobby}. Y así, esta persona vivió muchas aventuras emocionantes.`;
+      const cuento = `
+      Había una vez una persona llamada ${nombresApellidos}, también conocida como "${apodo}". Tenía el cabello de color ${colorCabello} y unos hermosos ojos de color ${colorOjos}. A sus ${edad} años, su pasión más grande en la vida era su hobby: ${hobby}.
+
+      Esta persona vivió en un pequeño pueblo rodeado de naturaleza. Pasaba sus días explorando el bosque, donde encontraba la paz y la inspiración para su pasatiempo favorito. ${nombresApellidos} compartía su amor por ${hobby} con todos en la comunidad y enseñaba a los jóvenes a apreciar la belleza de la naturaleza.
+
+      Un día, una gran aventura esperaba a ${nombresApellidos}. Recibió una carta misteriosa que lo invitaba a un viaje a tierras lejanas en busca de un tesoro perdido. Emocionado, partió en un emocionante viaje lleno de desafíos y descubrimientos.
+
+      Durante su viaje, conoció a personas de diferentes culturas y aprendió valiosas lecciones de vida. Después de muchas peripecias, finalmente encontró el tesoro, que resultó ser un libro antiguo lleno de historias maravillosas.
+
+      Al regresar a su pueblo, ${nombresApellidos} compartió las historias del viaje y el tesoro con todos. Su pasión por ${hobby} se hizo aún más fuerte, y siguió viviendo una vida llena de aventuras emocionantes y compartiendo su amor por la naturaleza con todos los que conocía.
+      `;
 
       cuentoResultado.textContent = cuento;
     });
